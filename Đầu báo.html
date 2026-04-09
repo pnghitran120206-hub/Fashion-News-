@@ -1,0 +1,451 @@
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion New AAA - Đàu báo</title>
+
+<style>
+:root {
+  --bg-soft: #E7DFCB;
+  --bg-box: #D2C5AB;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f5f5;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #A8957B;
+}
+
+/* logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* menu */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* SEARCH */
+.search {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: #E7DFCB;
+  border-radius: 8px;
+  min-width: 170px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background: #D2C5AB;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ===== BANNER ===== */
+.banner {
+  height: 500px;
+  background-image: url(https://i.pinimg.com/1200x/26/9e/9c/269e9c58046f1166221c14ffd41c284d.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.banner-content h1 {
+  font-size: 40px;
+}
+
+/* ===== NEWS ===== */
+.news {
+  padding: 50px;
+  background: var(--bg-soft);
+  text-align: center;
+}
+
+.news-list {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.news-item {
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.news-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-item h3 {
+  padding: 10px;
+}
+
+.news-item p {
+  padding: 0 10px 15px;
+  font-size: 14px;
+  color: gray;
+}
+
+.news-item:hover {
+  transform: translateY(-10px);
+}
+.container {
+  display: flex;
+  padding: 20px;
+}
+
+.left { width: 70%; }
+.right { width: 30%; padding-left: 20px; }
+
+.article {
+  background: white;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.article img {
+  width: 100%;
+  border-radius: 10px;
+}
+/* ===== TEXT ===== */
+.box-content {
+  position: absolute;
+  bottom: -50px;
+  left: 20px;
+  color: white;
+}
+.section-title {
+  font-size: 28px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.section-sub {
+  color: gray;
+  margin-bottom: 30px;
+  text-align: center;
+}
+/* ===== PRODUCTS ===== */
+.products {
+  display: flex;
+  gap: 25px;
+  padding: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== BOX ===== */
+.box {
+  width: 280px;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== IMAGE ===== */
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.box:hover img {
+  transform: scale(1.2);
+}
+
+
+/* ===== IMAGE ===== */
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.box:hover img {
+  transform: scale(1.2);
+}
+
+  transition: 0.4s;
+}
+
+.box:hover .box-content {
+  bottom: 60px;
+}
+.about {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.about img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.about p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  position: absolute;
+  bottom: -60px;
+  left: 20px;
+  padding: 10px 20px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.box:hover .btn {
+  bottom: 20px;
+}
+
+.btn:hover {
+  background: black;
+  color: white;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #A8957B;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+<a href="index.html" class="logo">AAA</a>
+
+  <div class="menu">
+
+    <div class="dropdown">
+      <a href="#">Tài khoản ▾</a>
+      <div class="dropdown-content">
+        <a href="login.html">Đăng nhập</a>
+        <a href="register.html">Đăng ký</a>
+        <a href="folder.html">Thư mục</a>
+        <a href="profile.html">Thông tin</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Bộ sưu tập ▾</a>
+      <div class="dropdown-content">
+        <a href="collection.html">Tất cả</a>
+        <a href="thu-dong.html">Thu Đông</a>
+        <a href="xuan-he.html">Xuân Hè</a>
+        <a href="bags.html">Túi xách</a>
+        <a href="glasses.html">Kính mắt</a>
+        <a href="jewelry.html">Trang sức</a>
+      </div>
+    </div>
+
+    <a href="news.html">Tin tức</a>
+    <a href="magazine.html">Đầu báo</a>
+
+    <input class="search" type="text" placeholder="Tìm kiếm...">
+
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="banner-content">
+    <h1>FASHION NEWS 2026</h1>
+    <p>Xu hướng thời trang mới nhất</p>
+  </div>
+</div>
+
+ <h2 class="section-title">ĐẦU BÁO</h2>
+
+  <div class="products">
+
+    <div class="box">
+      <img src="https://i.pinimg.com/1200x/35/e6/9b/35e69b8fd520bac8e74e27b16120bad8.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+    <div class="box">
+      <img src="https://i.pinimg.com/736x/c3/80/57/c38057108947859ad2cbe177e5c10bb5.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <h3>Báo việt</h3>
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+    <div class="box">
+      <img src="https://i.pinimg.com/1200x/b5/c0/ce/b5c0ce055c3e4d9713910bb1b2834614.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+    
+        <div class="box">
+      <img src="https://i.pinimg.com/1200x/56/3c/3a/563c3a53ae19c80c71c9c5b07d514f55.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+    <div class="box">
+      <img src="https://i.pinimg.com/736x/27/d5/ee/27d5eeac7232fe325b5d6b68a5693be1.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <h3>Báo việt</h3>
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+    <div class="box">
+      <img src="https://i.pinimg.com/736x/99/0a/90/990a9019d16cf9ad91b993bb39027b8a.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+    
+            <div class="box">
+      <img src="https://i.pinimg.com/1200x/a1/2a/07/a12a071923c86abf3e8f15d993796c5a.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+    <div class="box">
+      <img src="https://i.pinimg.com/1200x/d7/aa/7c/d7aa7c1bf49fbdd6ea605f7a49381f17.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <h3>Báo việt</h3>
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+    <div class="box">
+      <img src="https://i.pinimg.com/736x/fe/7f/1a/fe7f1ab61e65c3d0cca3cdf0ce42b1c5.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+    
+            <div class="box">
+      <img src="https://i.pinimg.com/736x/3f/fd/b4/3ffdb46b152ee550665392fe51f5e2dc.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+    <div class="box">
+      <img src="https://i.pinimg.com/736x/f6/70/73/f6707380c138c09f45499f49568498b5.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <h3>Báo việt</h3>
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+    <div class="box">
+      <img src="https://i.pinimg.com/1200x/35/d1/f5/35d1f58756a9ce7e90319f0e77330524.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+  </div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Fashion AAA
+</div>
+
+</body>
+</html>
