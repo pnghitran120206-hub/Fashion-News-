@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Fashion New AAA</title>
+
+<style>
+:root {
+  --bg-soft: #E7DFCB;
+  --bg-box: #D2C5AB;
+}
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f5f5;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #A8957B;
+  color: white;
+}
+
+.menu a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+/* ===== BANNER ===== */
+.banner {
+  height: 500px;
+  background-image: url(https://i.pinimg.com/1200x/cb/71/41/cb7141083471301d19c4d24f09a7d42c.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* lớp phủ tối cho chữ dễ nhìn */
+.banner::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+/* nội dung banner */
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.banner-content h1 {
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+
+.banner-content p {
+  font-size: 18px;
+}
+
+/* ===== CONTENT ===== */
+.content-text {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px;
+  text-align: justify;
+  font-size: 23px;
+}
+
+/* ===== PRODUCTS ===== */
+.products {
+  display: flex;
+  gap: 25px;
+  padding: 50px;
+  justify-content: center;
+}
+
+/* ===== BOX ===== */
+.box {
+  width: 280px;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== IMAGE ===== */
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.box:hover img {
+  transform: scale(1.2);
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.box:hover .overlay {
+  opacity: 1;
+}
+
+/* ===== TEXT ===== */
+.box-content {
+  position: absolute;
+  bottom: -50px;
+  left: 20px;
+  color: white;
+  transition: 0.4s;
+}
+
+.box:hover .box-content {
+  bottom: 60px;
+}
+/* layout ảnh + chữ */
+.about {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+/* ảnh bên trái */
+.about img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* chữ bên phải */
+.about p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  position: absolute;
+  bottom: -60px;
+  left: 20px;
+  padding: 10px 20px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.box:hover .btn {
+  bottom: 20px;
+}
+
+.btn:hover {
+  background: black;
+  color: white;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #A8957B;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+/* ===== GALLERY ===== */
+.gallery {
+  padding: 50px;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+/* grid ảnh */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ảnh */
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+/* hover zoom */
+.gallery-grid img:hover {
+  transform: scale(1.1);
+}
+.products-section {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.section-sub {
+  color: gray;
+  margin-bottom: 30px;
+}
+/* ===== NEWS ===== */
+.news {
+  padding: 50px;
+  background: var(--bg-soft);
+  text-align: center;
+}
+
+.news-list {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.news-item {
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.news-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-item h3 {
+  padding: 10px;
+}
+
+.news-item p {
+  padding: 0 10px 15px;
+  font-size: 14px;
+  color: gray;
+}
+
+/* hover */
+.news-item:hover {
+  transform: translateY(-10px);
+}
+/* ===== MENU FIX ===== */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+/* dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown > a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+/* menu con */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #E7DFCB;
+  min-width: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #D2C5AB;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}/* header chia 2 bên */
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 15px 40px;
+  background: #A8957B;
+}
+
+/* menu nằm phải */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+/* link */
+.menu a {
+  color: black;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+/* search */
+.search {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  margin-left: 15px;
+}
+
+/* dropdown giữ nguyên */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background: #E7DFCB;
+  min-width: 160px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+
+  <!-- LOGO TRÁI -->
+  <div class="logo">AAA</div>
+
+  <!-- MENU PHẢI -->
+  <div class="menu">
+
+    <div class="dropdown">
+      <a href="#">Tài khoản</a>
+      <div class="dropdown-content">
+        <a href="#">Đăng nhập</a>
+        <a href="#">Đăng ký</a>
+        <a href="#">Thư mục</a>
+        <a href="#">Thông tin tài khoản</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Bộ sưu tập</a>
+      <div class="dropdown-content">
+        <a href="#">Bộ sưu tập</a>
+        <a href="#">Thu Đông</a>
+        <a href="#">Xuân Hè</a>
+        <a href="#">Túi xách</a>
+        <a href="#">kính mắt</a>
+        <a href="#">Trang sức</a>
+      </div>
+    </div>
+    <a href="#">Tin tức</a>
+    <a href="#">Đầu báo</a>
+    <!-- SEARCH -->
+    <input class="search" type="text" placeholder="Tìm kiếm...">
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="banner">
+  <div class="banner-content">
+    <h1>BỘ SƯU TẬP THỜI TRANG</h1>
+    <p>TẠP CHÍ THỜI TRANG</p>
+  </div>
+</div>
+<!-- CONTENT -->
+<div class="content-text">
+
+  <h2>TRIẾT LÝ THIẾT KẾ</h2>
+
+  <div class="about">
+
+    <p>
+Thiết kế thời trang là sự kết hợp giữa thẩm mỹ và công năng, nhằm tạo ra những trang phục không chỉ đẹp mà còn phù hợp với nhu cầu sử dụng và tôn lên cá tính của người mặc. Mỗi thiết kế là một cách thể hiện bản sắc riêng của nhà thiết kế, đồng thời phản ánh xu hướng, văn hóa và tinh thần của xã hội.
+
+Bên cạnh yếu tố sáng tạo, triết lý thiết kế còn đề cao tính ứng dụng và sự thoải mái, hướng đến việc phục vụ con người trong đời sống hằng ngày. Ngoài ra, trong bối cảnh hiện đại, thời trang cũng ngày càng chú trọng đến tính bền vững, sử dụng chất liệu thân thiện với môi trường và giảm thiểu tác động tiêu cực đến xã hội.
+
+Tóm lại, triết lý thiết kế thời trang là sự cân bằng giữa cái đẹp, tính thực tiễn và trách nhiệm, tạo nên giá trị lâu dài cho cả người mặc và cộng đồng.</p>
+<img src="https://i.pinimg.com/736x/9c/7b/bb/9c7bbb3bb5580c03007796cd24e36af1.jpg" height="550px">
+</div>
+
+</div>
+<!-- GALLERY -->
+<div class="gallery">
+  <h2>BỘ SƯU TẬP</h2>
+
+  <div class="gallery-grid">
+    <img src="https://i.pinimg.com/736x/ca/d7/71/cad7715b0f194171e70dc4078dfe9ebd.jpg">
+    <img src="https://i.pinimg.com/736x/8e/80/2d/8e802d88a0b6dba33b966a2c396902c3.jpg">
+    <img src="https://i.pinimg.com/736x/d7/a4/17/d7a4174d36f4a91cf0d2a4fc76fd4338.jpg">
+    <img src="https://i.pinimg.com/736x/59/31/96/5931962ffcc8582957bc04c89b42337c.jpg">
+  </div>
+</div>
+<!-- PRODUCTS -->
+<div class="products-section">
+
+  <h2 class="section-title">ĐẦU BÁO</h2>
+  <p class="section-sub">Cập nhật xu hướng thời trang mới nhất</p>
+
+  <div class="products">
+
+    <div class="box">
+      <img src="https://i.pinimg.com/736x/78/5b/9b/785b9b0ab2c5f5bbeb8e6c1938d86d52.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <h3>Báo nước ngoài</h3>
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+    <div class="box">
+      <img src="https://i.pinimg.com/1200x/65/f1/4d/65f14d925e670e9ce12afc606de1921e.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <h3>Báo việt</h3>
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+    <div class="box">
+      <img src="https://i.pinimg.com/1200x/b5/c0/ce/b5c0ce055c3e4d9713910bb1b2834614.jpg">
+      <div class="overlay"></div>
+      <div class="box-content">
+        <h3>báo tuổi trẻ</h3>
+      </div>
+      <button class="btn">Xem ngay</button>
+    </div>
+
+  </div>
+</div>
+<!-- NEWS PAPER -->
+<div class="news">
+
+  <h2 class="section-title">TIN TỨC</h2>
+  <p class="section-sub">Tin nóng trong và ngoài nước</p>
+
+  <div class="news-list">
+
+    <div class="news-item">
+      <img src="https://i.pinimg.com/736x/e0/54/74/e05474d461f0bd17a630351f7626ee65.jpg">
+      <h3>Xu hướng mùa hè 2026</h3>
+      <p>Những phong cách nổi bật đang dẫn đầu xu hướng thời trang năm nay.</p>
+    </div>
+
+    <div class="news-item">
+      <img src="https://i.pinimg.com/736x/b2/56/7e/b2567e0cdeaa74928697588412f25f7b.jpg">
+      <h3>Street Style lên ngôi</h3>
+      <p>Phong cách đường phố tiếp tục khẳng định vị thế trong giới trẻ.</p>
+    </div>
+
+    <div class="news-item">
+      <img src="https://i.pinimg.com/1200x/4c/c4/90/4cc4902f571e4ebcf3ff088f10e6121a.jpg">
+      <h3>Thời trang bền vững</h3>
+      <p>Xu hướng sử dụng chất liệu thân thiện môi trường ngày càng phổ biến.</p>
+    </div>
+
+  </div>
+
+</div>
+<!-- FOOTER -->
+<div class="footer">
+  <p>CÔNG TY TNHH DỊCH VỤ QUẢNG CÁO VÀ TRUYỀN THÔNG AAA</p>
+  <p>Địa chỉ: VKU</p>
+  <p>Điện thoại: 0964 123 456 | Email: AAA@gmail.com</p>
+  <p>Giấy phép thiết lập mạng xã hội trên AAA số XXX/GP-BTTTT, được cấp ngày 10/10/2000 do Bộ Thông Tin và Truyền Thông cấp.</p>
+</div>
+
+</body>
+</html>
