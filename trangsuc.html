@@ -1,41 +1,138 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Celestique | Thiết kế trang sức</title>
+<head>
+<meta charset="UTF-8">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Lookbook - Fashion Collection</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Montserrat", sans-serif;
-        background-color: #d6d0c9; 
-        color: #ffffff;
-      }
-      .serif {
-        font-family: "Playfair Display", serif;
-      }
-      .letter-spacing-wide {
-        letter-spacing: 0.2em;
-      }
-      .hero-bg {
-        background-color: #bcaa8e; 
-      }
-      .card-bg {
-        background-color: #d4d4d4;
-      }
-      .btn-dark {
-        background-color: #a8957b;
-        color: white;
-        transition: 0.3s;
-      }
-      .btn-dark:hover {
-        background-color: #d2c5ab;
-      }
-            .footer {
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"> 
+ 
+<title>Fashion New LUXÉA</title>
+<style>
+ .serif { font-family: 'Playfair Display', serif; }
+        .sans { font-family: 'Inter', sans-serif; }
+        body { background-color: #fff; color: #1a1a1a; }
+:root {
+  --bg-soft: #E7DFCB;
+  --bg-box: #D2C5AB;
+}
+
+body { font-family: 'Inter', sans-serif; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .bg-pastel { background-color: #f5e6d3; } 
+        .bg-cream { background-color: #faf3e0; }
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #A8957B;
+  color: white;
+}
+
+.menu a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+
+
+/* ===== BOX ===== */
+.box {
+  width: 280px;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== IMAGE ===== */
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.box:hover img {
+  transform: scale(1.2);
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.box:hover .overlay {
+  opacity: 1;
+}
+
+/* ===== TEXT ===== */
+.box-content {
+  position: absolute;
+  bottom: -50px;
+  left: 20px;
+  color: white;
+  transition: 0.4s;
+}
+
+.box:hover .box-content {
+  bottom: 60px;
+}
+/* layout ảnh + chữ */
+.about {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+/* ảnh bên trái */
+.about img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* chữ bên phải */
+.about p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  position: absolute;
+  bottom: -60px;
+  left: 20px;
+  padding: 10px 20px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.box:hover .btn {
+  bottom: 20px;
+}
+
+.btn:hover {
+  background: black;
+  color: white;
+}
+
+/* ===== FOOTER ===== */
+.footer {
   background: #A8957B;
   color: white;
   text-align: center;
@@ -103,10 +200,140 @@
                 margin-right: 10px;
             }
         }
-    </style>
-  </head>
-  <body>
-    <header
+
+
+/* ===== MENU FIX ===== */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+/* dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown > a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+/* menu con */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #E7DFCB;
+  min-width: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #D2C5AB;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}/* header chia 2 bên */
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 15px 40px;
+  background: #A8957B;
+}
+
+/* menu nằm phải */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+/* link */
+.menu a {
+  color: black;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+/* search */
+.search {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  margin-left: 15px;
+}
+
+/* dropdown giữ nguyên */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background: #E7DFCB;
+  min-width: 160px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+
+<body class="sans">
+
+<!-- HEADER -->
+<div class="header">
+
+  <!-- LOGO TRÁI -->
+  <div class="logo">LUXÉA</div>
+
+  <!-- MENU PHẢI -->
+  <div class="menu">
+
+    <div class="dropdown">
+      <a href="#">Tài khoản</a>
+      <div class="dropdown-content">
+        <a href="/Fashion-News-/nhi.html">Đăng nhập</a>
+        <a href="/Fashion-News-/hi.html">Đăng ký</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="bosutap.html">Bộ sưu tập</a>
+      <div class="dropdown-content">
+        <a href="/Fashion-News-/bosuutap.html">Bộ sưu tập</a>
+        <a href="/Fashion-News-/Thudong.html">Thu Đông</a>
+        <a href="/Fashion-News-/xuan he.html">Xuân Hè</a>
+        <a href="/Fashion-News-/Tui.html">Túi xách</a>
+        <a href="/Fashion-News-/kinh.html">Kính mắt</a>
+        <a href="/Fashion-News-/trangsuc.html">Trang sức</a>
+      </div>
+    </div>
+    <a href="/Fashion-News-/tintuc.html">Tin tức</a>
+    <a href="/Fashion-News-/daubao.html">Đầu báo</a>
+    <!-- SEARCH -->
+    <input class="search" type="text" placeholder="Tìm kiếm...">
+  </div>
+</div>
+
+
+
+ <header
       class="relative min-h-screen flex flex-col items-center pt-10 px-8 text-center hero-bg"
     >
       <nav
@@ -251,7 +478,8 @@
         </div>
       </div>
     </section>
-        <!-- FOOTER -->
+
+<!-- FOOTER -->
   
 <div class="footer">
           <div class="footer-container">
@@ -297,5 +525,5 @@
   <p>Giấy phép thiết lập mạng xã hội trên AAA số XXX/GP-BTTTT, được cấp ngày 10/10/2000 do Bộ Thông Tin và Truyền Thông cấp.</p>
 </div>
 </div>
-  </body>
+</body>
 </html>
