@@ -1,11 +1,18 @@
+<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fashion New LUXÉA - Đàu báo</title>
-
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Lookbook - Fashion Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"> 
+ 
+<title>Fashion New LUXÉA</title>
 <style>
-:root {
+ :root {
   --bg-soft: #E7DFCB;
   --bg-box: #D2C5AB;
 }
@@ -85,7 +92,7 @@ body {
 /* ===== BANNER ===== */
 .banner {
   height: 500px;
-  background-image: url(https://i.pinimg.com/1200x/26/9e/9c/269e9c58046f1166221c14ffd41c284d.jpg);
+  background-image: url(https://i.pinimg.com/736x/4f/31/56/4f3156a09c60704fb34c8d9e821e6032.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -112,6 +119,243 @@ body {
   font-size: 40px;
 }
 
+/* ===== NEWS ===== */
+.news {
+  padding: 50px;
+  background: var(--bg-soft);
+  text-align: center;
+}
+
+.news-list {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.news-item {
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.news-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-item h3 {
+  padding: 10px;
+}
+
+.news-item p {
+  padding: 0 10px 15px;
+  font-size: 14px;
+  color: gray;
+}
+
+.news-item:hover {
+  transform: translateY(-10px);
+}
+.container {
+  display: flex;
+  padding: 20px;
+}
+
+.left { width: 70%; }
+.right { width: 30%; padding-left: 20px; }
+
+.article {
+  background: white;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.article img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #A8957B;
+  color: white;
+}
+
+.menu a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+
+
+/* ===== BOX ===== */
+.box {
+  width: 280px;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== IMAGE ===== */
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.box:hover img {
+  transform: scale(1.2);
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.box:hover .overlay {
+  opacity: 1;
+}
+
+/* ===== TEXT ===== */
+.box-content {
+  position: absolute;
+  bottom: -50px;
+  left: 20px;
+  color: white;
+  transition: 0.4s;
+}
+
+.box:hover .box-content {
+  bottom: 60px;
+}
+/* layout ảnh + chữ */
+.about {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+/* ảnh bên trái */
+.about img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* chữ bên phải */
+.about p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  position: absolute;
+  bottom: -60px;
+  left: 20px;
+  padding: 10px 20px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.box:hover .btn {
+  bottom: 20px;
+}
+
+.btn:hover {
+  background: black;
+  color: white;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #A8957B;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+   .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column { width: 30%; margin-bottom: 20px; }
+
+        .footer-column h3 {
+            margin-bottom: 30px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+     
+        .social-icons a {
+            color: WHITE;
+            margin-right: 15px;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #f1c40f;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #444;
+            margin-top: 20px;
+            padding-top: 15px;
+            font-size: 14px;
+        }
+
+
+        @media (max-width: 600px) {
+            .footer-column {
+                width: 100%;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+             .social-icons a {
+                margin-right: 10px;
+            }
+        }
 /* ===== NEWS ===== */
 .news {
   padding: 50px;
@@ -287,46 +531,137 @@ body {
   text-align: center;
   padding: 30px;
 }
+
+/* ===== MENU FIX ===== */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+/* dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown > a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+/* menu con */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #E7DFCB;
+  min-width: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #D2C5AB;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}/* header chia 2 bên */
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 15px 40px;
+  background: #A8957B;
+}
+
+/* menu nằm phải */
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+/* link */
+.menu a {
+  color: black;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+/* search */
+.search {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  margin-left: 15px;
+}
+
+/* dropdown giữ nguyên */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background: #E7DFCB;
+  min-width: 160px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 </style>
 </head>
 
-<body>
+<body class="sans">
 
 <!-- HEADER -->
 <div class="header">
-<a href="index.html" class="logo">LUXÉA</a>
 
+  <!-- LOGO TRÁI -->
+  <div class="logo">LUXÉA</div>
+
+  <!-- MENU PHẢI -->
   <div class="menu">
 
     <div class="dropdown">
-      <a href="#">Tài khoản ▾</a>
+      <a href="#">Tài khoản</a>
       <div class="dropdown-content">
-        <a href="login.html">Đăng nhập</a>
-        <a href="register.html">Đăng ký</a>
-        <a href="folder.html">Thư mục</a>
-        <a href="profile.html">Thông tin</a>
+        <a href="/Fashion-News-/nhi.html">Đăng nhập</a>
+        <a href="/Fashion-News-/hi.html">Đăng ký</a>
       </div>
     </div>
 
     <div class="dropdown">
-      <a href="#">Bộ sưu tập ▾</a>
+      <a href="bosutap.html">Bộ sưu tập</a>
       <div class="dropdown-content">
-        <a href="collection.html">Tất cả</a>
-        <a href="thu-dong.html">Thu Đông</a>
-        <a href="xuan-he.html">Xuân Hè</a>
-        <a href="bags.html">Túi xách</a>
-        <a href="glasses.html">Kính mắt</a>
-        <a href="jewelry.html">Trang sức</a>
+        <a href="/Fashion-News-/bosuutap.html">Bộ sưu tập</a>
+        <a href="/Fashion-News-/Thudong.html">Thu Đông</a>
+        <a href="/Fashion-News-/xuan he.html">Xuân Hè</a>
+        <a href="/Fashion-News-/Tui.html">Túi xách</a>
+        <a href="/Fashion-News-/kinh.html">Kính mắt</a>
+        <a href="/Fashion-News-/trangsuc.html">Trang sức</a>
       </div>
     </div>
-
     <a href="/Fashion-News-/tintuc.html">Tin tức</a>
     <a href="/Fashion-News-/daubao.html">Đầu báo</a>
-
+    <!-- SEARCH -->
     <input class="search" type="text" placeholder="Tìm kiếm...">
-
   </div>
 </div>
+
+
 
 <!-- BANNER -->
 <div class="banner">
@@ -442,10 +777,52 @@ body {
 
   </div>
 
-<!-- FOOTER -->
-<div class="footer">
-  © 2026 Fashion LUXÉA
-</div>
 
+<!-- FOOTER -->
+  
+<div class="footer">
+          <div class="footer-container">
+
+       
+            <div class="footer-column">
+                <h3>Tuỳ chọn</h3>
+                <ul>
+                <li><a href="/Fashion-News-/gioithieu.html">Giới thiệu</a></li>
+                <li><a href="/Fashion-News-/dieukhoansudung.html">Điều khoản sử dụng</a></li>
+                <li><a href="/Fashion-News-/chinhsachriengtu.html">Chính sách riêng tư</a></li> 
+                <li><a href="/Fashion-News-/cauhoithuonggap.html">Câu hỏi thường gặp</a></li>
+        
+               
+            </div>
+
+            <div class="footer-column">
+                <h3>Danh mục</h3>
+                <ul>
+                    <li><a href="https://pnghitran120206-hub.github.io/Fashion-News-/">Trang chủ</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="#">Xu hướng</a></li>
+                    <li><a href="#">thương hiệu</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Liên hệ</h3>
+                <p>Email: LUXÉA@gmail.com</p>
+                <p>Phone: 099 999 999</p>
+                <p>Instagram: @LUXÉA</p>
+            </div>
+             <div class="social-icons">
+             <h4>@Follow us</h4>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+</div>
+  <p>CÔNG TY TNHH DỊCH VỤ QUẢNG CÁO VÀ TRUYỀN THÔNG AAA</p>
+  <p>Địa chỉ: VKU</p>
+  <p>Điện thoại: 0964 123 456 | Email: AAA@gmail.com</p>
+  <p>Giấy phép thiết lập mạng xã hội trên AAA số XXX/GP-BTTTT, được cấp ngày 10/10/2000 do Bộ Thông Tin và Truyền Thông cấp.</p>
+</div>
+</div>
 </body>
 </html>
