@@ -34,6 +34,7 @@ header {
   font-size: 22px;
   font-weight: bold;
   color: white;
+  user-select: none;
   text-decoration: none;
 }
 }
