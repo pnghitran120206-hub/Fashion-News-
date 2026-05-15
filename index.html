@@ -189,6 +189,132 @@ body {
     flex-wrap: wrap;
 }
 
+/* Nút chat */
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #E7DFCB, #BCAA8E);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  transition: 0.2s;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Box */
+.chat-box {
+  position: fixed;
+  bottom: 95px;
+  right: 20px;
+  width: 340px;
+  height: 450px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  overflow: hidden;
+
+  transform: scale(0.8);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.chat-box.active {
+  display: flex;
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Header */
+.chat-header {
+  background: linear-gradient(45deg, #BCAA8E, #D2C5AB);
+  color: white;
+  padding: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* nút đóng */
+.close-btn {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Body */
+.chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;      
+  flex-direction: column; 
+}
+
+/* Message */
+.message {
+  margin: 6px 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  display: inline-block;
+  width: fit-content;
+  animation: fadeIn 0.3s ease;
+}
+
+.user {
+  background: #BCAA8E;
+  color: white;
+  margin-left: auto;
+  text-align: left;
+}
+.bot {
+  background: #f1f1f1;
+}
+
+/* Footer */
+.chat-footer {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.chat-footer input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.chat-footer button {
+  border: none;
+  background: #BCAA8E;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .footer-column { width: 30%; margin-bottom: 20px; }
 
         .footer-column h3 {
@@ -564,6 +690,104 @@ Tóm lại, triết lý thiết kế thời trang là sự cân bằng giữa c�
   </div>
 
 </div>
+<button class="chat-toggle" onclick="toggleChat()">💬</button>
+
+<div class="chat-box" id="chatBox">
+  
+  <div class="chat-header">
+    Trợ lý LUXÉA
+    <span class="close-btn" onclick="toggleChat()">✖</span>
+  </div>
+
+  <div class="chat-body" id="chatBody"></div>
+
+  <div class="chat-footer">
+    <input type="text" id="userInput" placeholder="Nhập tin nhắn...">
+    <button onclick="sendMessage()">Gửi</button>
+  </div>
+
+</div>
+
+<script>
+let hasWelcomed = false;
+function toggleChat() {
+  let box = document.getElementById("chatBox");
+
+  if (box.classList.contains("active")) {
+    box.classList.remove("active");
+    setTimeout(() => {
+      box.style.display = "none";
+    }, 300);
+  } else {
+    box.style.display = "flex";
+    setTimeout(() => {
+      box.classList.add("active");
+    }, 10);
+
+    // lời chào tự động
+    if (!hasWelcomed) {
+      setTimeout(() => {
+        addMessage("LUXÉA xin chào bạn!\n Rất vui khi được phục vụ bạn?", "bot");
+      }, 400);
+      hasWelcomed = true;
+    }
+  }
+}
+
+/* Thêm tin nhắn */
+function addMessage(text, type) {
+  let msg = document.createElement("div");
+  msg.className = "message " + type;
+  msg.innerText = text;
+  document.getElementById("chatBody").appendChild(msg);
+  msg.scrollIntoView();
+}
+
+/* Gửi tin */
+function sendMessage() {
+  let input = document.getElementById("userInput");
+  let text = input.value.trim();
+  if (!text) return;
+
+  addMessage(text, "user");
+  input.value = "";
+
+  setTimeout(() => {
+    let reply = getBotReply(text);
+    addMessage(reply, "bot");
+  }, 600);
+}
+
+/* AI bán hàng */
+function getBotReply(input) {
+  input = input.toLowerCase();
+
+  if (input.includes("xin chào") || input.includes("hi")) {
+    return "Bạn muốn cập nhật xu hướng mới nhất hay muốn xem item hot hit mùa này?";
+  }
+
+  if (input.includes("tin tức")) {
+    return "Ngành thời trang gần đây đang chứng kiến sự trở lại mạnh mẽ của phong cách quiet luxury với các thiết kế tối giản và tinh tế. Nhiều nhà mốt lớn tập trung vào tính bền vững, sử dụng chất liệu thân thiện môi trường và giảm thiểu sản xuất dư thừa. ";
+  }
+
+  if (input.includes("bộ sưu tập")) {
+    return "Các bộ sưu tập thời trang gần đây tập trung vào tinh thần “Modern Luxury” với thiết kế tối giản, chất liệu cao cấp và bảng màu trung tính thanh lịch. Nhiều thương hiệu lựa chọn phom dáng oversized, đường cắt tinh tế cùng sự kết hợp giữa thời trang cổ điển và hơi thở hiện đại.";
+  }
+
+  if (input.includes("nổi tiếng") || input.includes("người")) {
+    return "Anna Wintour là một trong những biểu tượng quyền lực nhất của làng thời trang thế giới. Với phong cách tóc bob đặc trưng cùng kính râm tối màu, bà được xem là người có ảnh hưởng lớn đến xu hướng runway, các nhà thiết kế và cả sự phát triển của ngành công nghiệp fashion hiện đại.";
+  }
+
+  return "LUXÉA chưa hiểu ý bạn ";
+}
+
+/* Enter gửi */
+document.getElementById("userInput")
+.addEventListener("keypress", function(e) {
+  if (e.key === "Enter") sendMessage();
+});
+</script>
+
 <!-- FOOTER -->
   
 <div class="footer">
